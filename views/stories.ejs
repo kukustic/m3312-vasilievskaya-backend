@@ -13,34 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- JS -->
-  <script src="stories.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="site-header__branding">
-      <img class="branding__img" src="images/nori.jpg" alt="Нори — чёрная кошка" width="120" height="120">
-      <div class="branding__text">
-        <h1 class="branding__title">Нори</h1>
-        <p class="branding__subtitle">Чёрная кошка. Любит коробки, солнечных зайчиков и внимание.</p>
-      </div>
-    </div>
-
-    <nav class="nav" aria-label="Главное меню">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="/about">О Нори</a></li>
-        <li class="nav__item"><a class="nav__link" href="gallery.html">Фото</a></li>
-        <li class="nav__item"><a class="nav__link" href="/">Любимое</a></li>
-        <li class="nav__item"><a class="nav__link" href="care.html">Уход</a></li>
-        <li class="nav__item"><a class="nav__link" href="stories.html">Истории</a></li>
-        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-        <li class="nav__item"><a class="nav__link" href="feedback.html">Отзывы</a></li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('partials/header', { loggedIn }) %>
 
   <main class="page-main">
 
@@ -76,11 +53,11 @@
 
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <section id="contacts" class="contacts" aria-labelledby="contacts-title">
-      <p class="author"><small>Студент: Васильевская Ксения Васильевна — группа: M3312</small></p>
-    </section>
-  </footer>
+  <%- include('partials/footer') %>
+
+  <!-- ВАЖНО: скрипты внизу -->
+  <script src="/stories.js" defer></script>
+  <%- include('partials/scripts') %>
 
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — сайт чёрной кошки</title>
+  <meta name="keywords" content="кот, кошка, Нори, питомец, портфолио, животные">
+  <meta name="description" content="Мини-сайт чёрной кошки Нори — биография, фото, советы по уходу и контактная форма.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <%- include('partials/header', { loggedIn }) %>
+
+  <main class="page-main">
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section__title">Фотоальбом</h2>
+      <p class="section__desc">Пара кадров из жизни Нори:</p>
+
+      <ul class="gallery__list">
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="/images/nori_spit.jpg" alt="Нори лежит" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Нори лежит</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="/images/nori_na_okne.jpg" alt="Нори на окне" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Нори на окне</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="/images/nori_sonnaya.jpg" alt="Сонная Нори" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Сонная Нори</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="/images/nori_sgorela.jpg" alt="Нори — сгоревший пирожок" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Сгоревший пирожок 😼</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+
+</body>
+</html>

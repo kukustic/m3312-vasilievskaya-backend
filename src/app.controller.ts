@@ -13,4 +13,36 @@ export class AppController {
   getAbout(@Query('auth') auth?: string) {
     return { loggedIn: auth === 'true' };
   }
+
+  @Get('care')
+  @Render('care')
+  getCare(@Query('auth') auth?: string) {
+  return { loggedIn: auth === 'true' };
 }
+
+@Get('contacts')
+@Render('contacts')
+getContacts(@Query('auth') auth?: string) {
+  return { loggedIn: auth === 'true' };
+}
+
+@Get('feedback')
+@Render('feedback')
+getFeedback(@Query('auth') auth?: string) {
+  return { loggedIn: auth === 'true' };
+}
+
+@Get('gallery')
+@Render('gallery')
+getGallery(@Query('auth') auth?: string) {
+  return { loggedIn: auth === 'true' };
+}
+
+@Get('stories')
+@Render('stories')
+getStories(@Query('auth') auth?: string) {
+  return { loggedIn: auth === 'true' };
+}
+
+}
+
