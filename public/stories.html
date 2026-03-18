@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — Истории</title>
+  <meta name="keywords" content="кот, кошка, Нори, истории, питомец">
+  <meta name="description" content="Забавные истории про чёрную кошку Нори.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JS -->
+  <script src="stories.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__branding">
+      <img class="branding__img" src="images/nori.jpg" alt="Нори — чёрная кошка" width="120" height="120">
+      <div class="branding__text">
+        <h1 class="branding__title">Нори</h1>
+        <p class="branding__subtitle">Чёрная кошка. Любит коробки, солнечных зайчиков и внимание.</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Главное меню">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="/about">О Нори</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Фото</a></li>
+        <li class="nav__item"><a class="nav__link" href="/">Любимое</a></li>
+        <li class="nav__item"><a class="nav__link" href="care.html">Уход</a></li>
+        <li class="nav__item"><a class="nav__link" href="stories.html">Истории</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link" href="feedback.html">Отзывы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <!-- Старые истории (статичные) -->
+    <section id="stories" class="stories" aria-labelledby="stories-title">
+      <h2 id="stories-title" class="section__title">Забавные истории</h2>
+
+      <article class="stories__article">
+        <h3 class="stories__subtitle">Неудачный прыжок</h3>
+        <p>Однажды Нори хотела допрыгнуть до подоконника, но немного не рассчитала высоту, врезалась в стену и плюхнулась в кастрюлю с водой.</p>
+
+        <blockquote class="quote">
+          <p>«Нори — маленькая дурочка: она всегда во всё врезается»</p>
+          <cite class="quote__cite">— Владелец Ксения</cite>
+        </blockquote>
+      </article>
+    </section>
+
+    <!-- Прелоадер и ошибки -->
+    <div id="preloader" class="loader">Загрузка...</div>
+    <div id="error-message" class="error-message"></div>
+
+    <!-- Контейнер для «живых» историй -->
+    <div id="posts-container"></div>
+
+    <!-- Шаблон для историй -->
+    <template id="story-template">
+      <article class="post">
+        <h3 class="post__title"></h3>
+        <p class="post__body"></p>
+      </article>
+    </template>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <section id="contacts" class="contacts" aria-labelledby="contacts-title">
+      <p class="author"><small>Студент: Васильевская Ксения Васильевна — группа: M3312</small></p>
+    </section>
+  </footer>
+
+</body>
+</html>

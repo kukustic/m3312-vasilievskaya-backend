@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — О кошке</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="page-main">
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section__title">О Нори</h2>
+      <div class="about__content">
+        <article class="about__article about__article--bio">
+          <h3 class="about__subtitle">Краткая биография</h3>
+          <p>Нори — чёрная кошка с мягкой гладкой шёрсткой и выразительными глазами. <strong>Очень ласковая</strong>, но иногда ведёт себя как непоседа: любит бегать, <em>прыгать</em> и громко мяукать.</p>
+          <p>Возраст: <span class="about__age">3 месяца</span> (примерно). Привычки: спать на клавиатуре, играть по ночам, охотиться на мух.</p>
+        </article>
+
+        <article class="about__article about__article--char">
+          <h3 class="about__subtitle">Характер</h3>
+          <p>Добрая и игривая. Иногда пытается таскать еду — <del class="text--deleted">так делать нельзя</del> — <ins class="text--inserted">но она считает иначе</ins>.</p>
+        </article>
+
+        <aside class="aside" aria-label="Интересный факт">
+          <h4 class="aside__title">Интересный факт</h4>
+          <p>Чёрные кошки иногда считаются символом удачи — Нори особенно любит тёплые места и коробки.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+
+</body>
+</html>

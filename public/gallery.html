@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — сайт чёрной кошки</title>
+  <meta name="keywords" content="кот, кошка, Нори, питомец, портфолио, животные">
+  <meta name="description" content="Мини-сайт чёрной кошки Нори — биография, фото, советы по уходу и контактная форма.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__branding">
+      <img class="branding__img" src="images/nori.jpg" alt="Нори — чёрная кошка" width="120" height="120">
+      <div class="branding__text">
+        <h1 class="branding__title">Нори</h1>
+        <p class="branding__subtitle">Чёрная кошка. Любит коробки, солнечных зайчиков и внимание.</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Главное меню">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="/about">О Нори</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Фото</a></li>
+        <li class="nav__item"><a class="nav__link" href="/">Любимое</a></li>
+        <li class="nav__item"><a class="nav__link" href="care.html">Уход</a></li>
+        <li class="nav__item"><a class="nav__link" href="stories.html">Истории</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link" href="feedback.html">Отзывы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section__title">Фотоальбом</h2>
+      <p class="section__desc">Пара кадров из жизни Нори:</p>
+
+      <ul class="gallery__list">
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="images/nori_spit.jpg" alt="Нори лежит" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Нори лежит</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="images/nori_na_okne.jpg" alt="Нори на окне" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Нори на окне</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="images/nori_sonnaya.jpg" alt="Сонная Нори" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Сонная Нори</figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery__item">
+          <figure class="gallery__figure">
+            <img src="images/nori_sgorela.jpg" alt="Нори — сгоревший пирожок" class="gallery__img" width="300" loading="lazy">
+            <figcaption class="gallery__caption">Сгоревший пирожок 😼</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <section id="contacts" class="contacts" aria-labelledby="contacts-title">
+      <p class="author"><small>Студент: Васильевская Ксения Васильевна — группа: M3312</small></p>
+    </section>
+  </footer>
+
+ <script src="main.js"></script>
+
+</body>
+</html>

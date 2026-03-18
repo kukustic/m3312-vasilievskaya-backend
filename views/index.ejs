@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — сайт чёрной кошки</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="page-main">
+    <section id="faves" class="faves" aria-labelledby="faves-title">
+      <h2 id="faves-title" class="section__title">Любимые вещи Нори</h2>
+      <p>Что любит Нори:</p>
+      <ol class="faves__list">
+        <li class="faves__item">Игрушечный мышонок</li>
+        <li class="faves__item">Солнечное место на подоконнике</li>
+        <li class="faves__item">Вкусная еда</li>
+        <li class="faves__item">Тёплая труба от сушилки</li>
+      </ol>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+
+</body>
+</html>

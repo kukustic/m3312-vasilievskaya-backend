@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — сайт чёрной кошки</title>
+  <meta name="keywords" content="кот, кошка, Нори, питомец, портфолио, животные">
+  <meta name="description" content="Мини-сайт чёрной кошки Нори — биография, фото, советы по уходу и контактная форма.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__branding">
+      <img class="branding__img" src="images/nori.jpg" alt="Нори — чёрная кошка" width="120" height="120">
+      <div class="branding__text">
+        <h1 class="branding__title">Нори</h1>
+        <p class="branding__subtitle">Чёрная кошка. Любит коробки, солнечных зайчиков и внимание.</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Главное меню">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="/about">О Нори</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Фото</a></li>
+        <li class="nav__item"><a class="nav__link" href="/">Любимое</a></li>
+        <li class="nav__item"><a class="nav__link" href="care.html">Уход</a></li>
+        <li class="nav__item"><a class="nav__link" href="stories.html">Истории</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link" href="feedback.html">Отзывы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <section id="contacts" class="contacts" aria-labelledby="contacts-title">
+      <h2 id="contacts-title" class="section__title">Контакты</h2>
+      <p>Если хочешь узнать больше про Нори — напиши:</p>
+
+      <form class="form" action="#" method="post" aria-label="Форма связи с владельцем Нори">
+        <label for="name" class="form__label">Имя:</label>
+        <input id="name" name="name" class="form__input" type="text" placeholder="Твоё имя" required aria-required="true">
+
+        <label for="email" class="form__label">Email:</label>
+        <input id="email" name="email" class="form__input" type="email" placeholder="example@mail.com" required aria-required="true">
+
+        <label for="message" class="form__label">Сообщение:</label>
+        <textarea id="message" name="message" class="form__textarea" rows="4" placeholder="Напиши что-нибудь про Нори"></textarea>
+
+        <button type="submit" class="form__button">Отправить</button>
+      </form>
+
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+      <section id="contact" class="contacts" aria-labelledby="contacts-title">
+        <p class="author"><small>Студент: Васильевская Ксения Васильевна — группа: M3312</small></p>
+      </section>
+  </footer>
+
+ <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — сайт чёрной кошки</title>
+  <meta name="keywords" content="кот, кошка, Нори, питомец, портфолио, животные">
+  <meta name="description" content="Мини-сайт чёрной кошки Нори — биография, фото, советы по уходу и контактная форма.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__branding">
+      <img class="branding__img" src="images/nori.jpg" alt="Нори — чёрная кошка" width="120" height="120">
+      <div class="branding__text">
+        <h1 class="branding__title">Нори</h1>
+        <p class="branding__subtitle">Чёрная кошка. Любит коробки, солнечных зайчиков и внимание.</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Главное меню">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="/about">О Нори</a></li>
+        <li class="nav__item"><a class="nav__link" href="gallery.html">Фото</a></li>
+        <li class="nav__item"><a class="nav__link" href="/">Любимое</a></li>
+        <li class="nav__item"><a class="nav__link" href="care.html">Уход</a></li>
+        <li class="nav__item"><a class="nav__link" href="stories.html">Истории</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        <li class="nav__item"><a class="nav__link" href="feedback.html">Отзывы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <section id="care" class="care" aria-labelledby="care-title">
+      <h2 id="care-title" class="section__title">Уход за Нори</h2>
+
+      <article class="care__article">
+        <h3 class="care__subtitle">Короткий гайд</h3>
+        <p>Ниже — пример «рецепта» ежедневного ухода (псевдокод):</p>
+
+        <pre class="code-block" tabindex="0" aria-label="Пример кода по уходу"><code>// Утренний ритуал ухода за Нори (псевдокод)
+feed(nori, "влажный корм", 1);
+stroke(nori, 3 * minutes);
+check_water_bowl();
+clean_litter();
+play_with(toy_mouse, 5 * minutes);
+// заканчиваем день — сон в коробке
+</code></pre>
+
+        <p><strong>Важно:</strong> ветеринарные осмотры раз в год, профилактика по графику.</p>
+        <h3 class="care__subtitle">Режим ухода</h3>
+
+<table class="care-table">
+  <thead>
+    <tr>
+      <th>Процедура</th>
+      <th>Частота</th>
+      <th>Комментарий</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td data-label="Процедура">Кормление</td>
+      <td data-label="Частота">2 раза в день</td>
+      <td data-label="Комментарий">Влажный + сухой корм</td>
+    </tr>
+    <tr>
+      <td data-label="Процедура">Смена воды</td>
+      <td data-label="Частота">Ежедневно</td>
+      <td data-label="Комментарий">Свежая вода</td>
+    </tr>
+    <tr>
+      <td data-label="Процедура">Уборка лотка</td>
+      <td data-label="Частота">1 раз в день</td>
+      <td data-label="Комментарий">Без запаха</td>
+    </tr>
+    <tr>
+      <td data-label="Процедура">Игры</td>
+      <td data-label="Частота">2–3 раза в день</td>
+      <td data-label="Комментарий">Активные игрушки</td>
+    </tr>
+  </tbody>
+</table>
+
+      </article>
+    </section>
+
+  </main>
+    <footer class="site-footer" role="contentinfo">
+    <section id="contacts" class="contacts" aria-labelledby="contacts-title">
+      <p class="author"><small>Студент: Васильевская Ксения Васильевна — группа: M3312</small></p>
+    </section>
+  </footer>
+
+ <script src="main.js"></script>
+</body>
+</html>

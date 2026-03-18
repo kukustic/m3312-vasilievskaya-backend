@@ -1,12 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Render, Query } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Render('index')
+  getIndex(@Query('auth') auth?: string) {
+    return { loggedIn: auth === 'true' };
+  }
+
+  @Get('about')
+  @Render('about')
+  getAbout(@Query('auth') auth?: string) {
+    return { loggedIn: auth === 'true' };
   }
 }
