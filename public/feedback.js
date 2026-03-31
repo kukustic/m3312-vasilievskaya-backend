@@ -1,7 +1,7 @@
 (async function () {
-  const form = document.getElementById("feedback-form");
   const reviewsContainer = document.getElementById("reviews");
   const template = document.getElementById("review-template");
+  const toastRoot = document.getElementById("toast-root");
 
   async function fetchReviews() {
     const res = await fetch("/api/feedback");
@@ -13,6 +13,11 @@
     clone.querySelector(".review__name").textContent = review.user.name;
     clone.querySelector(".review__email").textContent = review.user.email;
     clone.querySelector(".review__text").textContent = review.message;
+    const link = clone.querySelector(".review__edit");
+    if (link) {
+      link.textContent = "Открыть";
+      link.setAttribute("href", `/feedback/${review.id}`);
+    }
     reviewsContainer.appendChild(clone);
   }
 
@@ -22,27 +27,42 @@
     reviews.forEach(createReviewElement);
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  function showToast(text) {
+    if (!toastRoot) return;
 
-    const name = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const el = document.createElement("div");
+    el.textContent = text;
+    el.style.position = "fixed";
+    el.style.right = "16px";
+    el.style.bottom = "16px";
+    el.style.padding = "12px 14px";
+    el.style.borderRadius = "12px";
+    el.style.background = "#111";
+    el.style.color = "#fff";
+    el.style.boxShadow = "0 10px 25px rgba(0,0,0,.2)";
+    el.style.zIndex = "9999";
+    toastRoot.appendChild(el);
 
-    if (!name || !email || !message) {
-      alert("Все поля обязательны");
-      return;
-    }
+    setTimeout(() => el.remove(), 3000);
+  }
 
-    await fetch("/api/feedback", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
+  function attachSse() {
+    const es = new EventSource("/feedback/sse");
+    es.addEventListener("message", async (event) => {
+      try {
+        const payload = JSON.parse(event.data);
+        const mapText = {
+          created: "Добавлен новый отзыв",
+          updated: "Отзыв обновлён",
+          deleted: "Отзыв удалён",
+        };
+        showToast(mapText[payload.type] ?? "Обновление отзывов");
+        await renderReviews();
+      } catch {
+      }
     });
-
-    form.reset();
-    renderReviews();
-  });
+  }
 
   renderReviews();
+  attachSse();
 })();

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — добавить отзыв</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <%- include('partials/header', { loggedIn }) %>
+
+  <main class="page-main">
+    <section class="feedback">
+      <h2 class="section__title">Добавить отзыв</h2>
+
+      <form class="form" method="post" action="/feedback">
+        <label>Имя</label>
+        <input type="text" name="name" required minlength="2">
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Сообщение</label>
+        <textarea name="message" required minlength="5"></textarea>
+
+        <button type="submit">Сохранить</button>
+      </form>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
+
