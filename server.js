@@ -1,9 +1,19 @@
 import 'dotenv/config';
 import express from "express";
 import path from "path";
+import { execSync } from "child_process";
 import { getAllFeedbacks, addFeedback } from "./feedbackService.js";
 
 const app = express();
+
+// Выполнить миграции при старте
+try {
+  console.log("Running Prisma migrations...");
+  execSync('npx prisma migrate deploy', { stdio: 'inherit' });
+  console.log("Migrations applied successfully!");
+} catch (err) {
+  console.error("Migration failed:", err);
+}
 
 // папка с EJS
 app.set("view engine", "ejs");
@@ -55,4 +65,5 @@ app.get("/contacts", (req, res) => res.render("contacts"));
 app.get("/feedback", (req, res) => res.render("feedback"));
 
 // запуск
-app.listen(3000, () => console.log("http://localhost:3000"));
+const PORT = process.env.PORT || 3000; // Render задаёт переменную PORT
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
