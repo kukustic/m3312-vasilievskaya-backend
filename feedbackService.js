@@ -1,4 +1,4 @@
-import { prisma } from "./prisma/prismaClient.js"; // твой prisma client
+import { prisma } from "./prisma/prismaClient.js";
 
 export async function getAllFeedbacks() {
   return await prisma.review.findMany({

@@ -1,14 +1,14 @@
-// prisma/prismaClient.js
 import pkg from '@prisma/client';
+const { PrismaClient } = pkg;
+
 import { Pool } from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
 
-const { PrismaClient } = pkg;
-
-console.log("DB URL:", process.env.DATABASE_URL);
-
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL + '?sslmode=require',
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 const adapter = new PrismaPg(pool);
