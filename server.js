@@ -1,9 +1,19 @@
 import 'dotenv/config';
 import express from "express";
 import path from "path";
+import { execSync } from "child_process";
 import { getAllFeedbacks, addFeedback } from "./feedbackService.js";
 
 const app = express();
+
+// Выполнить миграции при старте
+try {
+  console.log("Running Prisma migrations...");
+  execSync('npx prisma migrate deploy', { stdio: 'inherit' });
+  console.log("Migrations applied successfully!");
+} catch (err) {
+  console.error("Migration failed:", err);
+}
 
 // папка с EJS
 app.set("view engine", "ejs");
