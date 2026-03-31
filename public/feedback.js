@@ -1,64 +1,48 @@
-(function () {
-
+(async function () {
   const form = document.getElementById("feedback-form");
   const reviewsContainer = document.getElementById("reviews");
   const template = document.getElementById("review-template");
 
-  // загрузка сохранённых отзывов
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-
-  function saveReviews() {
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+  async function fetchReviews() {
+    const res = await fetch("/api/feedback");
+    return await res.json();
   }
 
-  function createReviewElement(review, index) {
-
+  function createReviewElement(review) {
     const clone = template.content.cloneNode(true);
-
-    clone.querySelector(".review__name").textContent = review.name;
-    clone.querySelector(".review__email").textContent = review.email;
+    clone.querySelector(".review__name").textContent = review.user.name;
+    clone.querySelector(".review__email").textContent = review.user.email;
     clone.querySelector(".review__text").textContent = review.message;
-
-    const editBtn = clone.querySelector(".review__edit");
-
-    editBtn.addEventListener("click", function () {
-      const newText = prompt("Изменить отзыв:", review.message);
-      if (newText && newText.length >= 5) {
-        review.message = newText;
-        reviews[index] = review;
-        saveReviews();
-        renderReviews();
-      }
-    });
-
     reviewsContainer.appendChild(clone);
   }
 
-  function renderReviews() {
+  async function renderReviews() {
     reviewsContainer.innerHTML = "";
+    const reviews = await fetchReviews();
     reviews.forEach(createReviewElement);
   }
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const name = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    if (name.length < 2 || message.length < 5) {
-      alert("Проверьте введённые данные");
+    if (!name || !email || !message) {
+      alert("Все поля обязательны");
       return;
     }
 
-    const review = { name, email, message };
-    reviews.push(review);
+    await fetch("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-    saveReviews();
-    renderReviews();
     form.reset();
+    renderReviews();
   });
 
   renderReviews();
-
 })();
