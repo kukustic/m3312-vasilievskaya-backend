@@ -8,7 +8,7 @@ const { PrismaClient } = pkg;
 console.log("DB URL:", process.env.DATABASE_URL);
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL + '?sslmode=require',
 });
 
 const adapter = new PrismaPg(pool);
