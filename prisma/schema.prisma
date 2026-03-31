@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String
+  email   String   @unique
+  reviews Review[]
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  message   String
+  createdAt DateTime @default(now())
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model Cat {
+  id          Int           @id @default(autoincrement())
+  name        String
+  age         Int
+  description String
+
+  stories      Story[]
+  careRoutines CareRoutine[]
+}
+
+model Story {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String
+
+  catId Int
+  cat   Cat @relation(fields: [catId], references: [id])
+}
+
+model CareRoutine {
+  id          Int    @id @default(autoincrement())
+  title       String
+  frequency   String
+  description String
+
+  catId Int
+  cat   Cat @relation(fields: [catId], references: [id])
+}
