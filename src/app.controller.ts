@@ -26,12 +26,6 @@ getContacts(@Query('auth') auth?: string) {
   return { loggedIn: auth === 'true' };
 }
 
-@Get('feedback')
-@Render('feedback')
-getFeedback(@Query('auth') auth?: string) {
-  return { loggedIn: auth === 'true' };
-}
-
 @Get('gallery')
 @Render('gallery')
 getGallery(@Query('auth') auth?: string) {

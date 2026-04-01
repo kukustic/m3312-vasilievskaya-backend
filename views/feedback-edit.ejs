@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Нори — редактировать отзыв</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <%- include('partials/header', { loggedIn }) %>
+
+  <main class="page-main">
+    <section class="feedback">
+      <h2 class="section__title">Редактировать отзыв</h2>
+
+      <article class="review">
+        <h3 class="review__name"><%= review.user.name %></h3>
+        <p class="review__email"><%= review.user.email %></p>
+      </article>
+
+      <form class="form" method="post" action="/feedback/<%= review.id %>">
+        <label>Сообщение</label>
+        <textarea name="message" required minlength="5"><%= review.message %></textarea>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="submit">Сохранить</button>
+          <a class="button" href="/feedback/<%= review.id %>">Отмена</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
+
