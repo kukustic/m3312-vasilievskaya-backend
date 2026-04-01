@@ -48,6 +48,8 @@
 
   function attachSse() {
     const es = new EventSource("/feedback/sse");
+    es.onopen = () => showToast("SSE подключено (живые обновления)");
+    es.onerror = () => showToast("SSE: ошибка подключения");
     es.addEventListener("message", async (event) => {
       try {
         const payload = JSON.parse(event.data);
